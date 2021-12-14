@@ -5,10 +5,38 @@ import { StyleSheet, Text, View } from "react-native";
 export default function App() {
   return (
     // Try setting `flexDirection` to 'column'/'column-reverse'/'row'/'row-reverse'
-    <View style={styles.container}>
-      <Text style={styles.headerStyle}>flexDirection: 'row-reverse'</Text>
+    //EE2C38 -> vermelho
+    //FAA030 -> laranja
+    // 32B76C -> verde
+    <View style={[{ flex: 1 }, styles.elementsContainer]}>
       <View
-        style={[{ flexDirection: "row-reverse" }, styles.elementsContainer]}
+        style={[
+          { flexDirection: "row-reverse", flex: 1 },
+          styles.elementsContainer,
+        ]}
+      >
+        <View style={{ width: 50, height: 50, backgroundColor: "#EE2C38" }} />
+        <View style={{ width: 50, height: 50, backgroundColor: "#FAA030" }} />
+        <View style={{ width: 50, height: 50, backgroundColor: "#32B76C" }} />
+      </View>
+
+      <View
+        style={[{ flexDirection: "row", flex: 1 }, styles.elementsContainer]}
+      >
+        <View style={{ width: 50, height: 50, backgroundColor: "#EE2C38" }} />
+        <View style={{ width: 50, height: 50, backgroundColor: "#FAA030" }} />
+        <View style={{ width: 50, height: 50, backgroundColor: "#32B76C" }} />
+      </View>
+
+      <View
+        style={[{ flexDirection: "column", flex: 1 }, styles.elementsContainer]}
+      >
+        <View style={{ width: 50, height: 50, backgroundColor: "#EE2C38" }} />
+        <View style={{ width: 50, height: 50, backgroundColor: "#FAA030" }} />
+        <View style={{ width: 50, height: 50, backgroundColor: "#32B76C" }} />
+      </View>
+      <View
+        style={[{ flexDirection: "column-reverse" }, styles.elementsContainer]}
       >
         <View style={{ width: 50, height: 50, backgroundColor: "#EE2C38" }} />
         <View style={{ width: 50, height: 50, backgroundColor: "#FAA030" }} />
@@ -19,10 +47,7 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    marginTop: 48,
-    flex: 1,
-  },
+  container: {},
   headerStyle: {
     fontSize: 24,
     textAlign: "center",
